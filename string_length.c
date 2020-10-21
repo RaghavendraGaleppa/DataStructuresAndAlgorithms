@@ -5,7 +5,7 @@
 #include<stdio.h>
 #define MAXLEN 100
 void f_getline(char input_str[]);
-int f_strlen(char input_str[]);
+int f_strlen(const char input_str[]);
 
 int main() {
 	
@@ -25,7 +25,11 @@ void f_getline(char input_str[]) {
 	}
 }
 
-int f_strlen(char input_str[]) {
+int f_strlen(const char input_str[]) {
+	/* 
+	   - Used const char[] instead of just char[] to show that this function 
+	   does not modify the contents of input_str array
+	   */
 	int i = 0;
 	while(input_str[i] != '\0')
 		++i;
